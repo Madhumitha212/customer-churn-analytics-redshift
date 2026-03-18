@@ -1,0 +1,48 @@
+Create Amazon S3 Bucket : 
+
+Objective :
+    Create an Amazon S3 bucket to store raw telecom customer churn dataset files before loading them into Amazon Redshift.
+
+Step 1: 
+    Open AWS Console
+    Login to AWS Management Console.
+    Search Amazon S3
+    Open the S3 service dashboard.
+
+Step 2: Create Bucket
+
+    Click:
+    Create bucket
+
+    Provide bucket configuration:
+    Bucket Name: Ex -telecom-redshift-assignment
+    AWS Region: same region used for Redshift
+    Bucket type: General purpose
+    Object Ownership: ACLs disabled (recommended)
+    Block Public Access: Keep all public access blocked
+    Bucket Versioning: Disabled
+    Encryption: Enable default Amazon S3 managed encryption (SSE-S3)
+
+Step 3: Create Folder Structure
+
+    Inside the bucket create folder: raw/
+
+    Final structure:
+    telecom-redshift-assignment/
+    └── raw/
+
+Step 4: Upload Dataset Files
+
+    Upload the following CSV files into raw folder: using upload_to_s3.py
+    - telecom_customer_churn.csv
+    - zip_code_population.csv
+
+    Final bucket structure:
+    telecom-redshift-assignment/
+    └── raw/
+    ├── telecom_customer_churn.csv
+    └── zip_code_population.csv
+
+Step 5: Verify Upload
+    Confirm both files are visible inside raw folder.
+    Check file sizes and upload completion status.
